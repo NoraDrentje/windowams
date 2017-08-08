@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="msvalidate.01" content="53D2BD6FAC063CF0CFA90C218A5BC1C1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+<script type="text/javascript" src="//use.typekit.net/zoe8zve.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<title>The Window | Amsterdam</title>
+
+<meta name="description" content="Welcome to the Window Amsterdam." />
+<meta name="robots" content="INDEX,FOLLOW" />
+<!-- <meta name="viewport" content="width=1500" /> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta property="fb:admins" content="100002355487502" />
+<meta property="og:site_name" content="R+Co" />
+
+<meta property="og:title" content="R+Co" />
+
+<meta property="og:url" content="http://www.randco.com/" />
+<meta property="og:image" content="http://www.randco.com/skin/frontend/base/default/images/og-image-01.jpg" />
+<meta property="og:image" content="http://www.randco.com/skin/frontend/base/default/images/og-image-02.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="The Culture of Hairdressing." />
+<link rel="icon" href="http://www.randco.com/media/favicon/websites/3/favicon_1.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://www.randco.com/media/favicon/websites/3/favicon_1.ico" type="image/x-icon" />
+
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = 'http://www.randco.com/js/blank.html';
+    var BLANK_IMG = 'http://www.randco.com/js/spacer.gif';
+//]]>
+</script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="style.css" media="all" />
+<link href="https://fonts.googleapis.com/css?family=Cabin:400i,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="http://www.randco.com/skin/frontend/enterprise/default/css/widgets.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.randco.com/skin/frontend/enterprise/default/css/amasty/ampromo/styles.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.randco.com/skin/frontend/base/default/css/blackbird/content.css" media="all" />
+<link rel="stylesheet" type="text/css" href="http://www.randco.com/skin/frontend/base/default/css/mirasvit_searchindex.css" media="all" />
+<script type="text/javascript" src="http://www.randco.com/js/prototype/prototype.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/lib/ccard.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/prototype/validation.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/scriptaculous/builder.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/scriptaculous/effects.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/scriptaculous/dragdrop.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/scriptaculous/controls.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/scriptaculous/slider.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/varien/js.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/varien/form.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/varien/menu.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/mage/translate.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/mage/cookies.js"></script>
+<script type="text/javascript" src="http://www.randco.com/js/amasty/ampromo/items.js"></script>
+<script type="text/javascript" src="http://www.randco.com/skin/frontend/enterprise/default/js/scripts.js"></script>
+<script type="text/javascript" src="http://www.randco.com/skin/frontend/enterprise/default/js/enterprise/catalogevent.js"></script>
+<script type="text/javascript" src="http://www.randco.com/skin/frontend/enterprise/default/js/enterprise/wishlist.js"></script>
+<script type="text/javascript" src="http://www.randco.com/skin/frontend/enterprise/rco/js/jquery.home.min.js"></script>
+<link href="http://www.randco.com/collective/rss/index/store_id/3/" title="Collective" rel="alternate" type="application/rss+xml" />
+<!--[if lt IE 7]>
+<script type="text/javascript" src="http://www.randco.com/js/lib/ds-sleight.js"></script>
+<script type="text/javascript" src="http://www.randco.com/skin/frontend/enterprise/default/js/iehover-fix.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.randco.com/skin/frontend/base/default/css/ie8.css" media="all" />
+<![endif]-->
+<link rel="canonical" href="http://www.randco.com" />
+<script type="text/javascript">
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.randco.com';
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+optionalZipCountries = ["HK","IE","MO","PA"];
+//]]>
+</script>
+<script type="text/javascript">//<![CDATA[
+        var Translator = new Translate([]);
+        //]]></script></head>
+
+																<!-- BODY -->
+
+<body class="rco-home  cms-index-index cms-home">		
+				    											
+
+				    											<!-- Het Menu -->
+				<header>
+				  <nav class="rco-color-bg-ninety">
+				    <div class='rco-nav-wrap'>
+				      <ul class="main-links">
+				        <li><a href="http://www.randco.com/" class="rco-color-highlight-hover">The Window</a></li>
+				        <li><a href="http://www.randco.com/all.html" class="rco-color-highlight-hover">Book your new look</a></li>
+				        <li><a href="http://www.randco.com/collective/" class="rco-color-highlight-hover">Media</a></li>
+				        <li><a href="http://www.randco.com/lookbook/" class="rco-color-highlight-hover">Services</a></li>
+				        <li><a href="http://www.randco.com/about/" class="rco-color-highlight-hover">About Us</a></li>
+				      </ul>
+
+				      <div class="static-wrap">
+				        <ul class="static-links">
+				          <li><a href="http://www.randco.com/join/" class="rco-color-highlight-hover">Work for Us</a></li>
+				          <li>/<a href="http://www.randco.com/delivery-returns/" class="rco-color-highlight-hover">Terms of Service</a></li>
+				          <li>/<a href="http://www.randco.com/contact/" class="rco-color-highlight-hover">Contact</a></li>
+				        </ul>
+				      </div>
+
+				      <div class="social-wrap">
+				        <span>Socialize with us</span>
+				        <ul class="social-links">
+				          <li>/<a href="https://www.instagram.com/thewindowamsterdam/" target="_blank" class="rco-color-highlight-hover">Instagram</a></li>
+				          <li>/<a href="https://www.facebook.com/thewindowamsterdam" target="_blank" class="rco-color-highlight-hover">Facebook</a></li>
+				          <li>/<a href="https://nl.pinterest.com/Thewindowams/" class="rco-color-highlight-hover">Pinterest</a></li>
+				        </ul>
+				      </div>
+
+				      <div class="copyright-wrap">
+				        <p class="copyright-content">The Window Amsterdam &copy; 2017. All Rights Reserved.</p>
+				      </div>
+				    </div>
+				  </nav>
+
+				  <!-- hamburger icon -->
+				  <a href="javascript:void(0);" class="rco-menu-icon">
+				      <div class="burger rco-color-bg">
+				      </div>
+				  </a>
+
+				  <!-- 	Logo links onder menu  -->
+				  <a href="h#" class="rco-logo-home rco-color-hover">
+				    <img class="side-logo" src="/img/logo-side-hover.png">
+				  </a>
+
+				  <!-- Sign in and Cart dropdown -->
+				    <div class="rco-signin-cart rco-color rco-color-border">
+					    <ul>
+					        <li class="rco-topcart">
+					    		<a href="#" class="fa fa-facebook"></a>
+							</li>
+							<li>
+					          <a href="#" class="fa fa-instagram"></a>
+					        </li>
+					    </ul>
+				  	</div>
+  				</header>
+
+<a href='javascript:void(0);' class="rco-skip-intro">Skip</a>
+
+	<div class="rco-loader none">
+		<div class="rco-color">
+		    <span>R</span>
+		    <span class="symbol">+</span>
+		    <span>C</span>
+		    <span>o</span>
+  		</div>
+	</div>
+
+<article role="main">
+	<p>
+		<style type="text/css">
+			.rco-no-text-decoration {text-decoration: none;}
+		</style>
+	</p>
+
+															<!-- Linker Kolom -->
+<div class="rco-section rco-home clearfix right">
+		
+<!-- Foto Links -->
+
+		<div class="column third-width">
+			<div class="rco-image-text height-full shadow rco-color rco-pre-anim">
+					<div class="rco-wrap">
+						<a class="rco-filter" href="#"><img alt="Book Your Appointment" src="/img/willow.png" class="rco-stretch-fade"/>
+						</a>
+					</div>
+						<div class="rco-small-headline-right align-top rco-pre-anim rco-color-hovered">
+							<h3 class="rco-headline-border">Book Your<br/>Appointment</h3>
+							<p>Be Fabulous</p>
+						</div>
+			</div>
+		</div>	
+
+	<!-- Afstand tussen kolommen-->
+	<span class="rco-home-sep">&nbsp;</span>
+
+	<!-- Midden Kolom -->
+	<div class="column fifth-width">
+			<div class="rco-image-text height-5 push rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+				<div class="rco-wrap">
+					<a class="rco-filter" href="#">
+						<img src="/img/logo-lg.png" alt="The Window Amsterdam" class="rco-stretch-fade" />
+					</a>
+				</div>
+			</div>
+	<!-- Midden onder afbeelding -->
+		<div class="rco-image-text height-5 rco-pre-anim shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+			<div class="rco-color-bg rco-wrap rco-wrap-border">
+				<a class="rco-filter" href="#">
+					<video loop="loop" muted="" class="rco-lookbook-video" preload="auto">
+						<source src="img/evo.mp4" type="video/mp4" />
+						<source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/SUNSET-BLVD-Trim-1080dp.webm" type="video/webm" />
+						<source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/SUNSET-BLVD-Trim-1080dp.ogv" type="video/ogg" />
+					</video>
+						<object width="320" height="240" data="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" type="application/x-shockwave-flash">
+						<param name="src" value="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" />
+						<param name="flashvars" value="url=https%3A//d22njw728a8zee.cloudfront.net/vid/amanda-timelapse.mp4&amp;poster=/index.php/control/cms_block/edit/block_id/35/key/6fe31a5fca592c1754afcaa89db04ef165f6b6137692b8f7280b1d4524d17939/" />
+						<param name="allowfullscreen" value="true" />
+						<param name="allowscriptaccess" value="true" />
+						</object>
+				</a>
+					<img src="http://www.randco.com/media/wysiwyg/RCO-Homepage/RCO-Homepage2017/HighDive576x771.png" class="rco-stretch-fade" />
+				</a> 
+			</div>
+				<div class="rco-small-headline-right2 rco-pre-anim rco-color-hovered">
+					<h2>Cassius <br/ >Clay</h2>
+				</div>
+		</div>
+	</div>
+	
+<!-- Afstand tussen kolommen -->				
+<span class="rco-home-sep">&nbsp;</span>
+
+<!-- Rechter Kolom Boven Afbeelding -->
+<div class="column third-width">
+	<div class="rco-image-text height-5 push rco-pre-anim shadow rco-color  rco-color-highlight-hover rco-color-border-hover">
+		<div class="rco-color-bg rco-wrap">
+				 <a class="rco-filter" href="#"> 
+					<video loop="loop" muted="" class="rco-lookbook-video" preload="auto">
+						<source src="img/window-movie.mp4" type="video/mp4" />
+						<source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/SUNSET-BLVD-Trim-1080dp.webm" type="video/webm" />
+						<source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/SUNSET-BLVD-Trim-1080dp.ogv" type="video/ogg" />
+					</video>
+					<object width="320" height="240" data="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" type="application/x-shockwave-flash">
+						<param name="src" value="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" />
+						<param name="flashvars" value="url=https%3A//d22njw728a8zee.cloudfront.net/vid/amanda-timelapse.mp4&amp;poster=/index.php/control/cms_block/edit/block_id/35/key/6fe31a5fca592c1754afcaa89db04ef165f6b6137692b8f7280b1d4524d17939/" />
+						<param name="allowfullscreen" value="true" />
+						<param name="allowscriptaccess" value="true" />
+					</object>
+				</a>
+		</div>
+		<div class="video-headline-left rco-pre-anim">
+			<h2>Time<br />To<br />Shine</h2>
+		</div>
+	</div>
+<!-- Rechter onder afbeelding -->
+	<div class="rco-image-text height-5 rco-pre-anim shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+		<div class="rco-wrap">
+			<a class="rco-filter rco-color-bg" href="#">
+				<img src="/img/spray-cropped.jpg" alt="SAIL Soft Wave Spray" class="rco-stretch-fade" />
+			</a>
+		</div>
+			<div class="rco-small-headline-left rco-pre-anim rco-color-hovered">
+				<h2>Davines<br/>spray</h2>
+					<p class="above-title"></p>
+			</div>
+	</div>
+</div>
+</div>
+</p>
+
+<span class="rco-home-sep">&nbsp;</span>
+<!--Tweede Pagina-->
+
+
+<p>
+<div class="rco-section clearfix right">
+	<div class="column half-width">
+		<div class="rco-video-text height-full rco-pre-anim rco-color-after shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+			<div class="rco-wrap">
+				<div class="rco-wrap"><a class="rco-filter rco-color-bg" href="http://www.randco.com/bel-air-shampoo-conditioner.html"> <video loop="loop" muted="" class="rco-lookbook-video" preload="auto"><source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/BEL+AIR+Trim+-++1080dp.mp4" type="video/mp4" /><source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/BEL-AIR-Trim-1080dp.webm" type="video/webm" type="video/webm" /><source src="https://s3.amazonaws.com/randco/vid/HomepageJune2017/BEL-AIR-Trim-1080dp.ogv" type="video/ogg" /></video><object width="320" height="240" data="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" type="application/x-shockwave-flash"><param name="src" value="https://pro.luxurybrandpartners.com/js/tiny_mce/plugins/media/moxieplayer.swf" /><param name="flashvars" value="url=https%3A//d22njw728a8zee.cloudfront.net/vid/amanda-timelapse.mp4&amp;poster=/index.php/control/cms_block/edit/block_id/35/key/6fe31a5fca592c1754afcaa89db04ef165f6b6137692b8f7280b1d4524d17939/" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="true" /></object>\<img src="https://www.randco.com/wysiwyg/RCO-Homepage/RCO-Homepage2017/BELAIRFallback576x772.png.png" alt="ANALOG Cleansing Foam Conditioner" /> </a></div>
+				</div>
+			<div class="rco-large-headline rco-pre-anim rco-color-hovered">
+				<h2><span>BEL AIR</span></h2>
+					<p>For thick, curly<br/>or frizz-prone hair</p>
+						<h3>Smoothing Shampoo<br/> + Conditioner</h3>
+			</div>
+		</div>
+	</div>
+
+<span class="rco-home-sep">&nbsp;</span>
+
+	<div class="column quarter-width">
+		<div class="rco-image-text height-6 push rco-pre-anim shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+			<div class="rco-color-bg rco-wrap rco-wrap-border">
+				<a class="rco-filter rco-color-bg" href="http://www.randco.com/join/">
+					<img src="http://www.randco.com/media/wysiwyg/RCO-Homepage/RCO-Homepage2017/CarryUsR_CoHomepage.png" alt="Carry R+Co" class="rco-stretch-fade" />
+				</a>
+			</div>
+			<div class="rco-small-headline rco-pre-anim rco-color-hovered">
+				<h3>Carry<br /> Us</h3>
+					<p class="above-title">R+Co</p>
+			</div> 
+		</div>		
+
+		<div class="rco-image-text height-5 rco-pre-anim shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+			<div class="rco-wrap">
+				<a class="rco-filter rco-color-bg" href="http://www.randco.com/collective">
+					<img src="http://www.randco.com/media/wysiwyg/RCO-Homepage/social_Water.png" alt="" class="rco-stretch-fade" />
+				</a>
+			</div>
+			<div class="rco-small-headline rco-pre-anim rco-color-hovered">
+			<h3>Make More<br /> Mischief</h3>
+				<p class="above-title">R+Social</p>
+			</div>
+		</div>
+	</div>
+
+<span class="rco-home-sep">&nbsp;</span>
+
+	<div class="column quarter-width">
+		<div class="rco-headline height-3 no-link">
+			<span class="rco-color">Get.</span>
+			<span class="rco-color">The.</span>
+			<span class="rco-color">Look.</span>
+		</div>
+		<div class="rco-product height-7 shadow rco-color rco-color-border rco-color-highlight-hover rco-color-border-hover">
+			<div class="rco-product-image-wrap"><a class="rco-filter rco-color-bg" href="http://www.randco.com/collective/cat/get-the-look/post/festival-hair/"><img src="http://www.randco.com/media/wysiwyg/RCO-Homepage/RCO-Homepage2017/FESTIVALBlog2.jpg" alt="R+Co makes hair the headliner at this year's Coachella Music and Arts Festival." class="rco-stretch-fade" /></a></div>
+				<div class="rco-small-headline rco-pre-anim rco-color-hovered">
+					<h3>Festival Hair. Don't Care.</h3>
+						<p class="above-title">Crown Braids + More</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+</p>
+
+
+<!-- Scroll Bollen -->
+<div id="controls">
+    <ul>
+      	<li>
+			<a href="javascript:void(0);" class="rco-color-bg-hover"></a>
+		</li>
+    </ul>
+</div>
+
+</article>
+
+<!-- Letters THE WINDOW loading -->
+<div id="rco_loading">
+	<div></div>
+ 	<span class="w">W</span>
+	<span class="i">I</span>
+	<span class="n">N</span>
+	<span class="d">D</span>
+	<span class="o">O</span>
+</div>
+
+</body>
+</html>
